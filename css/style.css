@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Gasthony', serif;
+  src: url('css/fonts/Gasthony-Signature.woff2') format('woff2'),
+       url('css/fonts/Gasthony-Signature.woff') format('woff'),
+       url('css/fonts/Gasthony-Signature.ttf')  format('truetype'),
+       url('css/fonts/Gasthony-Signature.svg#Gasthony') format('svg');
+}
+
+body {
+  background-image: url("./images/background.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  }
+
+  .opacity {
+    background: rgba(255, 255, 255, 0.2) !important;
+    padding: 3px;
+  }
+
+  .paymoy {
+    height: 100px;
+    padding: 15px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    .center-on-med-and-down {
+      text-align: center;
+    }
+  }
+
+  .parasizerestrict {
+    position: relative;
+    overflow: hidden;
+    height: 250px !important;
+  }
+
+  /* .dropdown-content{
+    overflow: visible !important;
+  } */
+
+/* Materialize base */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #444;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: transparent;
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}

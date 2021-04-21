@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gasthony Signature';
+    src: url('fonts/Gasthony-Signature.eot');
+    src: url('fonts/Gasthony-Signature.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Gasthony-Signature.woff2') format('woff2'),
+         url('fonts/Gasthony-Signature.woff') format('woff'),
+         url('fonts/Gasthony-Signature.ttf')  format('truetype'),
+         url('fonts/Gasthony-Signature.svg#Gasthony Signature') format('svg');
+}
