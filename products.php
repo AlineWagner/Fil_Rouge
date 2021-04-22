@@ -29,7 +29,7 @@ require('./header.php');
 <!-- Connexion + requête -->
 <?php
 require "_config.php";
-$request = "SELECT * FROM FR_Products JOIN FR_Suppliers ON FR_Suppliers.sup_id = FR_Products.sup_id";
+$request = "SELECT * FROM FR_prosup";
 $result = $db->query($request);
 $rowNbr = $result->rowCount();
 
