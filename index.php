@@ -2,7 +2,7 @@
 require("./header.php");
 ?>
 
-  <!-- Img1 -->
+  <!-- Para1 -->
   <div id="index-banner" class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
@@ -39,8 +39,7 @@ require("./header.php");
 
               <p class="light">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In aspernatur velit vero, ullam libero facilis molestiae, tenetur dolore voluptatibus amet fugiat deserunt quo nostrum nisi itaque aperiam quos odio veniam consectetur, debitis officiis totam eum. Quos nostrum, dolore tempore labore rem doloremque dolorum! A minus iste fuga laborum dolor libero facere veritatis, sit eos voluptate nisi at non voluptatibus, dignissimos inventore. Culpa iure illum aliquam soluta possimus doloremque, magnam architecto suscipit, aut voluptatibus quia voluptas!</p>
 
-              <p class="light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem a saepe omnis nihil impedit suscipit, sapiente aut fugiat dolore, aliquid magni, ad quae. In vitae debitis officia sequi dolorem fugiat! Nesciunt voluptatum voluptates cumque magni blanditiis dolore ipsam laudantium consectetur accusantium nostrum, repellat neque quas quasi praesentium voluptatibus libero laborum eum fugiat aspernatur modi nisi quo. Nesciunt iste totam ut? Laboriosam nihil nisi unde, deleniti velit dignissimos voluptatem, doloremque, eius molestias cum tenetur quis modi!
-              </p>
+              <p class="light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem a saepe omnis nihil impedit suscipit, sapiente aut fugiat dolore, aliquid magni, ad quae. In vitae debitis officia sequi dolorem fugiat! Nesciunt voluptatum voluptates cumque magni blanditiis dolore ipsam laudantium consectetur accusantium nostrum, repellat neque quas quasi praesentium voluptatibus libero laborum eum fugiat aspernatur modi nisi quo. Nesciunt iste totam ut? Laboriosam nihil nisi unde, deleniti velit dignissimos voluptatem, doloremque, eius molestias cum tenetur quis modi!</p>
 
           </div>
           </div>
@@ -76,16 +75,8 @@ require("./header.php");
     </div>
   </div>
 
-  <!-- Img2 -->
-   <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-            <div class="row center">
-              <h5 class="header col s12 light"></h5>
-            </div>
-        </div>
-      </div>
-      
+  <!-- Para2 -->
+   <div class="parallax-container">
       <div class="parallax"><img src="./images/1365347071_18671.jpg" alt="Fond violons et partitions"></div>
   </div>
 
@@ -159,14 +150,12 @@ require("./header.php");
     </div>
   </div>
 
-  <!-- Img3 -->
+  <!-- Para3 -->
    <div class="parallax-container valign-wrapper">
       <div class="section no-pad-bot">
-          <div class="container">
-              <div class="row center">
-              <h5 class="header col s12 light white-text">Accomplissez ce dont vous avez toujours rêvé.</h5>
-              </div>
-          </div>
+        <div class="row center">
+          <h5 class="header col s12 light white-text">Accomplissez ce dont vous avez toujours rêvé.</h5>
+        </div>
       </div>
     <div class="parallax"><img src="./images/1345036776_6616.jpg" alt="Fond cello concert"></div>
   </div>

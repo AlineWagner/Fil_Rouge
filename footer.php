@@ -51,8 +51,8 @@
 <div class="divider grey darken-3"></div>
 
     <div class="footer-copyright">
-        <div class="container">
-            <small>Conservatoire de musique de Paris - Contrebasse - Luis & Clark - Luthier Amiens - Luthier Paris - Magasin instruments de musique Amiens - Magasin instruments de musique Paris - Microphone USB - Musique - NAMM - Partition contrebasse - Partition musique - Partition viole - Partition violon - Partition violoncelle - Site internet contrebasse - Site internet viole - Site internet violon - Site internet violoncelle - Stradivarius - Tagelharpa - Thomann - Yamaha - Viole - Violon - Violoncelle</small>
+        <div class="container center">
+            <small>Website created by moi.</small>
         </div>
     </div>
 </footer>

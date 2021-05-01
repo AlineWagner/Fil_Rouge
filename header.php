@@ -53,29 +53,30 @@
                             <li><a href="./index.php" class="nav-link">Accueil</a></li>
                             <li><a href="./products.php" class="nav-link">Boutique</a></li>
                             <li><a class="waves-effect waves-light modal-trigger" href="#cart"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a href="./basket.php"><i class="fas fa-shopping-cart"></i></a></li>
                             <li><a href="#"><i class="fas fa-cogs"></i></a></li>
                               <!-- Dropdown trigger -->
                             <li><a class='dropdown-trigger' href='#' data-target='dropdown1'><i class="fas fa-users-cog"></i><i class="material-icons right">arrow_drop_down</i></a>
                               <!-- Drop modal -->
                             <?php include('./dropmodlog.php'); ?>
                         </ul>
-
-    <!-- Navbar mobile -->
-                    <ul id="nav-mobile" class="sidenav">
-                        <li><a href="./index.php">Accueil</a></li>
-                        <li><a href="./products.php">Boutique</a></li>
-                        <li><a href="./index.php"><i class="fas fa-shopping-cart"></i>Panier</a></li>
-                        <li><a href="./register.php"><i class="fas fa-users-cog"></i>Espace client</a></li>
-                        <li><a href="./index.php"><i class="fas fa-cogs"></i>Settings</a></li>
-                        <li><a href="#"><i class="far fa-address-card"></i>Contact</a></li>
-                    </ul>
                     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
+
+    <!-- Navbar mobile -->
+    <ul class="sidenav" id="nav-mobile">
+        <li><a href="./index.php"><i class="fas fa-home"></i>Accueil</a></li>
+        <li><a href="./products.php"><i class="fas fa-store"></i>Boutique</a></li>
+        <li><a href="./basket.php"><i class="fas fa-shopping-cart"></i>Panier</a></li>
+        <li><a href="./register.php"><i class="fas fa-users-cog"></i>S'enregistrer</a></li>
+        <li><a href="./login.php"><i class="fas fa-sign-in-alt"></i>S'identifier</a></li>
+        <li><a href="./index.php"><i class="fas fa-sign-out-alt"></i>Se déconnecter</a></li>
+        <li><a href="#"><i class="far fa-address-card"></i>Contact</a></li>
+    </ul>
 </header>
 
 <body>

@@ -397,8 +397,11 @@ INSERT INTO `FR_Categories` (`cat_name`) VALUES
 ('Câbles & Accessoires');
 
 INSERT INTO `FR_SubCategories` (`cat_id`, `subcat_name`) VALUES
-
-(1, 'Viole'), (1, 'Violon'), (1, 'Violoncelle'), (1, 'Contrebasse'), (1, 'Tagelharpa');
+(1, 'Viole'),
+(1, 'Violon'),
+(1, 'Violoncelle'),
+(1, 'Contrebasse'),
+(1, 'Tagelharpa');
 
 INSERT INTO `FR_Clients` (`cli_ref`, `cli_surname`, `cli_name`, `cli_billaddress`, `cli_billcity`, `cli_billzip`, `cli_deliaddress`, `cli_delicity`, `cli_delizip`, `cli_phone`, `cli_mail`, `cli_password`, `cli_type`, `cli_coeff`, `cou_id`) VALUES
 ("MonHil", "Monroe", "Hilel", "893-6638 Semper Street", "Dedovsk", "K4J 8G3", "413-8805 Ornare, St.", "Châlons-en-Champagne", "29091", "06 12 00 74 64", "vehicula@scelerisquenequesed.net", "123", 0, 6, "FR"),
