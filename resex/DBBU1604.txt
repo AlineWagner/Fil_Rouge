@@ -1,0 +1,768 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: April 16, 2021 at 11:55 AM
+-- Server version: 5.7.30
+-- PHP Version: 7.4.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `filrouge`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Categories`
+--
+
+CREATE TABLE `FR_Categories` (
+  `cat_id` int(11) NOT NULL,
+  `cat_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FR_Categories`
+--
+
+INSERT INTO `FR_Categories` (`cat_id`, `cat_name`) VALUES
+(1, 'Instruments'),
+(2, 'Casques'),
+(3, 'Micros'),
+(4, 'Amplis & Effets'),
+(5, 'Câbles & Accessoires');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Clients`
+--
+
+CREATE TABLE `FR_Clients` (
+  `cli_id` int(11) NOT NULL,
+  `cli_ref` varchar(10) DEFAULT NULL,
+  `cli_surname` varchar(50) DEFAULT NULL,
+  `cli_name` varchar(50) DEFAULT NULL,
+  `cli_billaddress` varchar(50) DEFAULT NULL,
+  `cli_billcity` varchar(50) DEFAULT NULL,
+  `cli_billzip` varchar(10) DEFAULT NULL,
+  `cli_deliaddress` varchar(50) DEFAULT NULL,
+  `cli_delicity` varchar(50) DEFAULT NULL,
+  `cli_delizip` varchar(10) DEFAULT NULL,
+  `cli_phone` varchar(20) DEFAULT NULL,
+  `cli_mail` varchar(50) DEFAULT NULL,
+  `cli_password` varchar(100) DEFAULT NULL,
+  `cli_type` tinyint(4) DEFAULT NULL,
+  `cli_coeff` int(11) DEFAULT NULL,
+  `cou_id` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FR_Clients`
+--
+
+INSERT INTO `FR_Clients` (`cli_id`, `cli_ref`, `cli_surname`, `cli_name`, `cli_billaddress`, `cli_billcity`, `cli_billzip`, `cli_deliaddress`, `cli_delicity`, `cli_delizip`, `cli_phone`, `cli_mail`, `cli_password`, `cli_type`, `cli_coeff`, `cou_id`) VALUES
+(1, 'MonHil', 'Monroe', 'Hilel', '893-6638 Semper Street', 'Dedovsk', 'K4J 8G3', '413-8805 Ornare, St.', 'Châlons-en-Champagne', '29091', '06 12 00 74 64', 'vehicula@scelerisquenequesed.net', '123', 0, 6, 'FR'),
+(2, 'SchYeo', 'Schultz', 'Yeo', '243-4607 Donec Rd.', 'Evesham', '488559', 'P.O. Box 573, 5273 Egestas. Rd.', 'Granada', '84611-911', '1-928-416-1550', 'ipsum.Suspendisse.non@condimentumeget.net', '123', 1, 8, 'FR'),
+(3, 'ClaOrl', 'Clark', 'Orla', 'Ap #794-120 Pharetra Street', 'Timaru', '71364', 'P.O. Box 420, 316 Aliquet Road', 'Mellet', '49456', '1-276-172-6119', 'orci@leo.ca', '123', 0, 5, 'FR'),
+(4, 'WilKat', 'Williamson', 'Katell', '845-2637 Feugiat St.', 'Itajaí', '71009', 'Ap #604-2250 Vulputate, Street', 'Zeist', '3326', '825-3895', 'consequat.purus@tristique.com', '123', 0, 2, 'FR'),
+(5, 'RayDeb', 'Raymond', 'Deborah', 'P.O. Box 136, 8191 Eros. Road', 'Verrès', '81073', 'Ap #861-943 Volutpat. Road', 'Chelsea', '9690-7108', '483-3851', 'vel.turpis.Aliquam@augueSedmolestie.co.uk', '123', 0, 6, 'FR'),
+(6, NULL, 'Test', 'Test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test@test.org', '$2y$10$6cUlbcrG8U.Ok0v6nLXAoerfnjKejPzwjlgiG65dJ/d3t1ytW9dPa', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Countries`
+--
+
+CREATE TABLE `FR_Countries` (
+  `cou_id` varchar(2) NOT NULL,
+  `cou_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FR_Countries`
+--
+
+INSERT INTO `FR_Countries` (`cou_id`, `cou_name`) VALUES
+('AD', 'Andorre'),
+('AE', 'Émirats Arabes Unis'),
+('AF', 'Afghanistan'),
+('AG', 'Antigua-et-Barbuda'),
+('AI', 'Anguilla'),
+('AL', 'Albanie'),
+('AM', 'Arménie'),
+('AN', 'Antilles Néerlandaises'),
+('AO', 'Angola'),
+('AQ', 'Antarctique'),
+('AR', 'Argentine'),
+('AS', 'Samoa Américaines'),
+('AT', 'Autriche'),
+('AU', 'Australie'),
+('AW', 'Aruba'),
+('AX', 'Îles Åland'),
+('AZ', 'Azerbaïdjan'),
+('BA', 'Bosnie-Herzégovine'),
+('BB', 'Barbade'),
+('BD', 'Bangladesh'),
+('BE', 'Belgique'),
+('BF', 'Burkina Faso'),
+('BG', 'Bulgarie'),
+('BH', 'Bahreïn'),
+('BI', 'Biélorussie'),
+('BJ', 'Burundi'),
+('BK', 'Bénin'),
+('BM', 'Bermudes'),
+('BN', 'Brunéi Darussalam'),
+('BO', 'Bolivie'),
+('BR', 'Brésil'),
+('BS', 'Bahamas'),
+('BT', 'Bhoutan'),
+('BV', 'Île Bouvet'),
+('BW', 'Botswana'),
+('BY', 'Bélarus'),
+('BZ', 'Belize'),
+('CA', 'Canada'),
+('CB', 'Îles des Caraïbes'),
+('CC', 'Îles Cocos (Keeling)'),
+('CD', 'République Démocratique du Congo'),
+('CF', 'République Centrafricaine'),
+('CG', 'République du Congo'),
+('CH', 'Suisse'),
+('CI', 'Côte d\'Ivoire'),
+('CK', 'Îles Cook'),
+('CL', 'Chili'),
+('CM', 'Cameroun'),
+('CN', 'Chine'),
+('CO', 'Colombie'),
+('CR', 'Costa Rica'),
+('CS', 'Serbie-et-Monténégro'),
+('CU', 'Cuba'),
+('CV', 'Cap-vert'),
+('CX', 'Île Christmas'),
+('CY', 'Chypre'),
+('CZ', 'République Tchèque'),
+('DE', 'Allemagne'),
+('DJ', 'Djibouti'),
+('DK', 'Danemark'),
+('DM', 'Dominique'),
+('DO', 'République Dominicaine'),
+('DZ', 'Algérie'),
+('EC', 'Équateur'),
+('EE', 'Estonie'),
+('EG', 'Égypte'),
+('EH', 'Sahara Occidental'),
+('ER', 'Érythrée'),
+('ES', 'Espagne'),
+('ET', 'Éthiopie'),
+('FI', 'Finlande'),
+('FJ', 'Fidji'),
+('FK', 'Îles (malvinas) Falkland'),
+('FM', 'États Fédérés de Micronésie'),
+('FO', 'Îles Féroé'),
+('FR', 'France'),
+('GA', 'Gabon'),
+('GB', 'Royaume-Uni'),
+('GD', 'Grenade'),
+('GE', 'Géorgie'),
+('GF', 'Guyane Française'),
+('GH', 'Ghana'),
+('GI', 'Gibraltar'),
+('GL', 'Groenland'),
+('GM', 'Gambie'),
+('GN', 'Guinée'),
+('GP', 'Guadeloupe'),
+('GQ', 'Guinée Équatoriale'),
+('GR', 'Grèce'),
+('GS', 'Géorgie du Sud et les Îles Sandwich du Sud'),
+('GT', 'Guatemala'),
+('GU', 'Guam'),
+('GW', 'Guinée-Bissau'),
+('GY', 'Guyana'),
+('HK', 'Hong-Kong'),
+('HM', 'Îles Heard et Mcdonald'),
+('HN', 'Honduras'),
+('HR', 'Croatie'),
+('HT', 'Haïti'),
+('HU', 'Hongrie'),
+('ID', 'Indonésie'),
+('IE', 'Irlande'),
+('IL', 'Israël'),
+('IM', 'Île de Man'),
+('IN', 'Inde'),
+('IO', 'Territoire Britannique de l\'Océan Indien'),
+('IQ', 'Iraq'),
+('IR', 'République Islamique d\'Iran'),
+('IS', 'Islande'),
+('IT', 'Italie'),
+('JM', 'Jamaïque'),
+('JO', 'Jordanie'),
+('JP', 'Japon'),
+('KE', 'Kenya'),
+('KG', 'Kirghizistan'),
+('KH', 'Cambodge'),
+('KI', 'Kiribati'),
+('KM', 'Comores'),
+('KN', 'Saint-Kitts-et-Nevis'),
+('KP', 'République Populaire Démocratique de Corée'),
+('KR', 'République de Corée'),
+('KW', 'Koweït'),
+('KY', 'Îles Caïmanes'),
+('KZ', 'Kazakhstan'),
+('LA', 'République Démocratique Populaire Lao'),
+('LB', 'Liban'),
+('LC', 'Sainte-Lucie'),
+('LI', 'Liechtenstein'),
+('LK', 'Sri Lanka'),
+('LR', 'Libéria'),
+('LS', 'Lesotho'),
+('LT', 'Lituanie'),
+('LU', 'Luxembourg'),
+('LV', 'Lettonie'),
+('LY', 'Jamahiriya Arabe Libyenne'),
+('MA', 'Maroc'),
+('MC', 'Monaco'),
+('MD', 'République de Moldova'),
+('MG', 'Madagascar'),
+('MH', 'Îles Marshall'),
+('MK', 'L\'ex-République Yougoslave de Macédoine'),
+('ML', 'Mali'),
+('MM', 'Myanmar'),
+('MN', 'Mongolie'),
+('MO', 'Macao'),
+('MP', 'Îles Mariannes du Nord'),
+('MQ', 'Martinique'),
+('MR', 'Mauritanie'),
+('MS', 'Montserrat'),
+('MT', 'Malte'),
+('MU', 'Maurice'),
+('MV', 'Maldives'),
+('MW', 'Malawi'),
+('MX', 'Mexique'),
+('MY', 'Malaisie'),
+('MZ', 'Mozambique'),
+('NA', 'Namibie'),
+('NC', 'Nouvelle-Calédonie'),
+('NE', 'Niger'),
+('NF', 'Île Norfolk'),
+('NG', 'Nigéria'),
+('NI', 'Nicaragua'),
+('NL', 'Pays-Bas'),
+('NO', 'Norvège'),
+('NP', 'Népal'),
+('NR', 'Nauru'),
+('NU', 'Niué'),
+('NZ', 'Nouvelle-Zélande'),
+('OM', 'Oman'),
+('PA', 'Panama'),
+('PE', 'Pérou'),
+('PF', 'Polynésie Française'),
+('PG', 'Papouasie-Nouvelle-Guinée'),
+('PH', 'Philippines'),
+('PK', 'Pakistan'),
+('PL', 'Pologne'),
+('PM', 'Saint-Pierre-et-Miquelon'),
+('PN', 'Pitcairn'),
+('PR', 'Porto Rico'),
+('PS', 'Territoire Palestinien Occupé'),
+('PT', 'Portugal'),
+('PW', 'Palaos'),
+('PY', 'Paraguay'),
+('QA', 'Qatar'),
+('RE', 'Réunion'),
+('RO', 'Roumanie'),
+('RU', 'Fédération de Russie'),
+('RW', 'Rwanda'),
+('SA', 'Arabie Saoudite'),
+('SB', 'Îles Salomon'),
+('SC', 'Seychelles'),
+('SD', 'Soudan'),
+('SE', 'Suède'),
+('SG', 'Singapour'),
+('SH', 'Sainte-Hélène'),
+('SI', 'Slovénie'),
+('SJ', 'Svalbard et Île Jan Mayen'),
+('SK', 'Slovaquie'),
+('SL', 'Sierra Leone'),
+('SM', 'Saint-Marin'),
+('SN', 'Sénégal'),
+('SO', 'Somalie'),
+('SR', 'Suriname'),
+('ST', 'Sao Tomé-et-Principe'),
+('SV', 'El Salvador'),
+('SY', 'République Arabe Syrienne'),
+('SZ', 'Swaziland'),
+('TC', 'Îles Turks et Caïques'),
+('TD', 'Tchad'),
+('TF', 'Terres Australes Françaises'),
+('TG', 'Togo'),
+('TH', 'Thaïlande'),
+('TJ', 'Tadjikistan'),
+('TK', 'Tokelau'),
+('TL', 'Timor-Leste'),
+('TM', 'Turkménistan'),
+('TN', 'Tunisie'),
+('TO', 'Tonga'),
+('TR', 'Turquie'),
+('TT', 'Trinité-et-Tobago'),
+('TV', 'Tuvalu'),
+('TW', 'Taïwan'),
+('TZ', 'République-Unie de Tanzanie'),
+('UA', 'Ukraine'),
+('UG', 'Ouganda'),
+('UM', 'Îles Mineures Éloignées des États-Unis'),
+('US', 'États-Unis'),
+('UY', 'Uruguay'),
+('UZ', 'Ouzbékistan'),
+('VA', 'Saint-Siège (état de la Cité du Vatican)'),
+('VC', 'Saint-Vincent-et-les Grenadines'),
+('VE', 'Venezuela'),
+('VG', 'Îles Vièrges Britanniques'),
+('VI', 'Îles Vièrges des États-Unis'),
+('VN', 'Viet Nam'),
+('VU', 'Vanuatu'),
+('WF', 'Wallis et Futuna'),
+('WS', 'Samoa'),
+('YE', 'Yémen'),
+('YT', 'Mayotte'),
+('ZA', 'Afrique du Sud'),
+('ZM', 'Zambie'),
+('ZW', 'Zimbabwe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Delivered`
+--
+
+CREATE TABLE `FR_Delivered` (
+  `deli_id` int(11) NOT NULL,
+  `orde_id` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `deliadd` varchar(50) DEFAULT NULL,
+  `delidate` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Delivery`
+--
+
+CREATE TABLE `FR_Delivery` (
+  `deli_id` int(11) NOT NULL,
+  `deli_nbr` int(11) DEFAULT NULL,
+  `deli_ref` varchar(50) DEFAULT NULL,
+  `deli_desc` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Employees`
+--
+
+CREATE TABLE `FR_Employees` (
+  `emp_id` int(11) NOT NULL,
+  `pos_id` int(11) DEFAULT NULL,
+  `emp_ref` varchar(15) DEFAULT NULL,
+  `emp_surname` varchar(50) DEFAULT NULL,
+  `emp_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FR_Employees`
+--
+
+INSERT INTO `FR_Employees` (`emp_id`, `pos_id`, `emp_ref`, `emp_surname`, `emp_name`) VALUES
+(1, 1, 'Cispia', 'Wagner', 'Aline'),
+(2, 2, 'Headmaster', 'Dumbledore', 'Albus'),
+(3, 4, 'PrepareToDie', 'Montoya', 'Inigo'),
+(4, 7, 'XX121', 'Ripley', 'Ellen'),
+(5, 8, 'The Hair', 'Harrington', 'Steve');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Order_Details`
+--
+
+CREATE TABLE `FR_Order_Details` (
+  `orde_id` int(11) NOT NULL,
+  `orde_quantity` int(11) DEFAULT NULL,
+  `sales_id` int(11) DEFAULT NULL,
+  `pro_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Positions`
+--
+
+CREATE TABLE `FR_Positions` (
+  `pos_id` int(11) NOT NULL,
+  `pos_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FR_Positions`
+--
+
+INSERT INTO `FR_Positions` (`pos_id`, `pos_name`) VALUES
+(1, 'Web Admin'),
+(2, 'Directeur'),
+(3, 'Service Comptable'),
+(4, 'Ressources Humaines'),
+(5, 'Fonction Production et Développement'),
+(6, 'Fonction Marketing'),
+(7, 'Fonction Communication'),
+(8, 'Vendeur'),
+(9, 'Truc Muche'),
+(10, 'Machin Chouette');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Products`
+--
+
+CREATE TABLE `FR_Products` (
+  `pro_id` int(11) NOT NULL,
+  `pro_name` varchar(50) DEFAULT NULL,
+  `pro_label` varchar(150) DEFAULT NULL,
+  `pro_desc` varchar(500) DEFAULT NULL,
+  `pro_price` decimal(7,2) DEFAULT NULL,
+  `pro_pic` varchar(50) DEFAULT NULL,
+  `subcat_id` int(11) DEFAULT NULL,
+  `sup_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FR_Products`
+--
+
+INSERT INTO `FR_Products` (`pro_id`, `pro_name`, `pro_label`, `pro_desc`, `pro_price`, `pro_pic`, `subcat_id`, `sup_id`) VALUES
+(1, 'Signature Bohemia 108', 'Violon 4/4', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum.', '977.00', 'jpg', 2, 2),
+(2, 'Linea Macchi', 'Cello Stradivari', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum.', '15690.00', 'png', 3, 4),
+(3, 'Half-Size Cello', 'Black Carbon-Fiber Cello', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum.', '5500.00', 'jpg', 3, 3),
+(4, 'Bass', 'Black Carbon-Fiber Bass', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum.', '12929.00', 'jpg', 4, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `fr_prosup`
+-- (See below for the actual view)
+--
+CREATE TABLE `fr_prosup` (
+`sup_name` varchar(50)
+,`pro_id` int(11)
+,`pro_name` varchar(50)
+,`pro_label` varchar(150)
+,`pro_desc` varchar(500)
+,`pro_price` decimal(7,2)
+,`pro_pic` varchar(50)
+,`subcat_id` int(11)
+,`sup_id` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Sales`
+--
+
+CREATE TABLE `FR_Sales` (
+  `sales_id` int(11) NOT NULL,
+  `sales_num` int(11) DEFAULT NULL,
+  `sales_state` varchar(50) DEFAULT NULL,
+  `sales_billadd` varchar(50) DEFAULT NULL,
+  `sales_billdeli` varchar(50) DEFAULT NULL,
+  `sales_date` datetime DEFAULT NULL,
+  `sales_paydate` date DEFAULT NULL,
+  `sales_reduc` int(11) DEFAULT NULL,
+  `emp_id` int(11) DEFAULT NULL,
+  `cli_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_SubCategories`
+--
+
+CREATE TABLE `FR_SubCategories` (
+  `subcat_id` int(11) NOT NULL,
+  `cat_id` int(11) DEFAULT NULL,
+  `subcat_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FR_SubCategories`
+--
+
+INSERT INTO `FR_SubCategories` (`subcat_id`, `cat_id`, `subcat_name`) VALUES
+(1, 1, 'Viole'),
+(2, 1, 'Violon'),
+(3, 1, 'Violoncelle'),
+(4, 1, 'Contrebasse'),
+(5, 1, 'Tagelharpa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FR_Suppliers`
+--
+
+CREATE TABLE `FR_Suppliers` (
+  `sup_id` int(11) NOT NULL,
+  `sup_name` varchar(50) DEFAULT NULL,
+  `sup_address` varchar(50) DEFAULT NULL,
+  `sup_city` varchar(50) DEFAULT NULL,
+  `sup_zip` varchar(10) DEFAULT NULL,
+  `sup_phone` varchar(50) DEFAULT NULL,
+  `sup_mail` varchar(50) DEFAULT NULL,
+  `cou_id` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FR_Suppliers`
+--
+
+INSERT INTO `FR_Suppliers` (`sup_id`, `sup_name`, `sup_address`, `sup_city`, `sup_zip`, `sup_phone`, `sup_mail`, `cou_id`) VALUES
+(1, 'Pede Cum Sociis Company', 'P.O. Box 736, 2373 Etiam Street', 'Montebelluna', '97997', '1 (715) 976-6893', 'elementum.lorem.ut@Sedmalesuadaaugue.edu', 'GD'),
+(2, 'Conrad Götz', 'Landwüster Str. 17', 'Wernitzgrün', '08258', ' +49 (0) 37422 5880', 'Contact@CAGoetzjr.com', 'DE'),
+(3, 'Luis and Clark', '308 Adams Street', 'Milton, MA', '02186', '617-698-3034', 'info@luisandclark.com', 'US'),
+(4, 'Edgar E. Russ', 'Via Mauro Macchi, 2/a', 'Cremona', '26100', '+39 0372 24395', 'info@eruss.it', 'IT'),
+(5, 'Etiam Laoreet Libero LLP', 'Ap #817-4178 A St.', 'Castel Maggiore', '3308-4438', '7 9920449338', 'eros@arcu.ca', 'VU'),
+(6, 'Duis Mi LLC', 'P.O. Box 927, 1624 Nunc Ave', 'Vitry-sur-Seine', '37392', '7 4349287096', 'urna.suscipit@eratvel.org', 'CS'),
+(7, 'Proin Non Incorporated', 'Ap #813-274 Accumsan Road', 'Maastricht', '71109', '1 (853) 730-6693', 'pede.sagittis@Crasconvallis.net', 'IR'),
+(8, 'Dolor Sit Amet LLP', 'Ap #755-2987 Libero. Ave', 'Borchtlombeek', '297463', '7 2009452806', 'primis.in@Vivamus.co.uk', 'MC'),
+(9, 'Quisque LLP', 'P.O. Box 819, 9520 Phasellus St.', 'Burcht', '08344', '1 (578) 692-2267', 'dui.lectus@nonlobortis.org', 'DZ'),
+(10, 'Velit LLC', '665-8362 Dui Ave', 'Eugene', '675152', '7 1466210735', 'malesuada.fringilla.est@utaliquam.co.uk', 'BJ');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `fr_prosup`
+--
+DROP TABLE IF EXISTS `fr_prosup`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `fr_prosup`  AS  select `fr_suppliers`.`sup_name` AS `sup_name`,`fr_products`.`pro_id` AS `pro_id`,`fr_products`.`pro_name` AS `pro_name`,`fr_products`.`pro_label` AS `pro_label`,`fr_products`.`pro_desc` AS `pro_desc`,`fr_products`.`pro_price` AS `pro_price`,`fr_products`.`pro_pic` AS `pro_pic`,`fr_products`.`subcat_id` AS `subcat_id`,`fr_products`.`sup_id` AS `sup_id` from (`fr_suppliers` join `fr_products`) where (`fr_suppliers`.`sup_id` = `fr_products`.`sup_id`) ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `FR_Categories`
+--
+ALTER TABLE `FR_Categories`
+  ADD PRIMARY KEY (`cat_id`);
+
+--
+-- Indexes for table `FR_Clients`
+--
+ALTER TABLE `FR_Clients`
+  ADD PRIMARY KEY (`cli_id`),
+  ADD KEY `cou_id` (`cou_id`);
+
+--
+-- Indexes for table `FR_Countries`
+--
+ALTER TABLE `FR_Countries`
+  ADD PRIMARY KEY (`cou_id`);
+
+--
+-- Indexes for table `FR_Delivered`
+--
+ALTER TABLE `FR_Delivered`
+  ADD PRIMARY KEY (`orde_id`,`deli_id`),
+  ADD KEY `deli_id` (`deli_id`);
+
+--
+-- Indexes for table `FR_Delivery`
+--
+ALTER TABLE `FR_Delivery`
+  ADD PRIMARY KEY (`deli_id`);
+
+--
+-- Indexes for table `FR_Employees`
+--
+ALTER TABLE `FR_Employees`
+  ADD PRIMARY KEY (`emp_id`),
+  ADD KEY `pos_id` (`pos_id`);
+
+--
+-- Indexes for table `FR_Order_Details`
+--
+ALTER TABLE `FR_Order_Details`
+  ADD PRIMARY KEY (`orde_id`),
+  ADD KEY `sales_id` (`sales_id`),
+  ADD KEY `pro_id` (`pro_id`);
+
+--
+-- Indexes for table `FR_Positions`
+--
+ALTER TABLE `FR_Positions`
+  ADD PRIMARY KEY (`pos_id`);
+
+--
+-- Indexes for table `FR_Products`
+--
+ALTER TABLE `FR_Products`
+  ADD PRIMARY KEY (`pro_id`),
+  ADD KEY `subcat_id` (`subcat_id`),
+  ADD KEY `sup_id` (`sup_id`);
+
+--
+-- Indexes for table `FR_Sales`
+--
+ALTER TABLE `FR_Sales`
+  ADD PRIMARY KEY (`sales_id`),
+  ADD KEY `emp_id` (`emp_id`),
+  ADD KEY `cli_id` (`cli_id`);
+
+--
+-- Indexes for table `FR_SubCategories`
+--
+ALTER TABLE `FR_SubCategories`
+  ADD PRIMARY KEY (`subcat_id`),
+  ADD KEY `cat_id` (`cat_id`);
+
+--
+-- Indexes for table `FR_Suppliers`
+--
+ALTER TABLE `FR_Suppliers`
+  ADD PRIMARY KEY (`sup_id`),
+  ADD KEY `cou_id` (`cou_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `FR_Categories`
+--
+ALTER TABLE `FR_Categories`
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `FR_Clients`
+--
+ALTER TABLE `FR_Clients`
+  MODIFY `cli_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `FR_Delivered`
+--
+ALTER TABLE `FR_Delivered`
+  MODIFY `deli_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `FR_Delivery`
+--
+ALTER TABLE `FR_Delivery`
+  MODIFY `deli_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `FR_Employees`
+--
+ALTER TABLE `FR_Employees`
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `FR_Order_Details`
+--
+ALTER TABLE `FR_Order_Details`
+  MODIFY `orde_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `FR_Positions`
+--
+ALTER TABLE `FR_Positions`
+  MODIFY `pos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `FR_Products`
+--
+ALTER TABLE `FR_Products`
+  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `FR_Sales`
+--
+ALTER TABLE `FR_Sales`
+  MODIFY `sales_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `FR_SubCategories`
+--
+ALTER TABLE `FR_SubCategories`
+  MODIFY `subcat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `FR_Suppliers`
+--
+ALTER TABLE `FR_Suppliers`
+  MODIFY `sup_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `FR_Clients`
+--
+ALTER TABLE `FR_Clients`
+  ADD CONSTRAINT `fr_clients_ibfk_1` FOREIGN KEY (`cou_id`) REFERENCES `FR_Countries` (`cou_id`);
+
+--
+-- Constraints for table `FR_Delivered`
+--
+ALTER TABLE `FR_Delivered`
+  ADD CONSTRAINT `fr_delivered_ibfk_1` FOREIGN KEY (`orde_id`) REFERENCES `FR_Order_Details` (`orde_id`),
+  ADD CONSTRAINT `fr_delivered_ibfk_2` FOREIGN KEY (`deli_id`) REFERENCES `FR_Delivery` (`deli_id`);
+
+--
+-- Constraints for table `FR_Employees`
+--
+ALTER TABLE `FR_Employees`
+  ADD CONSTRAINT `fr_employees_ibfk_1` FOREIGN KEY (`pos_id`) REFERENCES `FR_Positions` (`pos_id`);
+
+--
+-- Constraints for table `FR_Order_Details`
+--
+ALTER TABLE `FR_Order_Details`
+  ADD CONSTRAINT `fr_order_details_ibfk_1` FOREIGN KEY (`sales_id`) REFERENCES `FR_Sales` (`sales_id`),
+  ADD CONSTRAINT `fr_order_details_ibfk_2` FOREIGN KEY (`pro_id`) REFERENCES `FR_Products` (`pro_id`);
+
+--
+-- Constraints for table `FR_Products`
+--
+ALTER TABLE `FR_Products`
+  ADD CONSTRAINT `fr_products_ibfk_1` FOREIGN KEY (`subcat_id`) REFERENCES `FR_SubCategories` (`subcat_id`),
+  ADD CONSTRAINT `fr_products_ibfk_2` FOREIGN KEY (`sup_id`) REFERENCES `FR_Suppliers` (`sup_id`);
+
+--
+-- Constraints for table `FR_Sales`
+--
+ALTER TABLE `FR_Sales`
+  ADD CONSTRAINT `fr_sales_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `FR_Employees` (`emp_id`),
+  ADD CONSTRAINT `fr_sales_ibfk_2` FOREIGN KEY (`cli_id`) REFERENCES `FR_Clients` (`cli_id`);
+
+--
+-- Constraints for table `FR_SubCategories`
+--
+ALTER TABLE `FR_SubCategories`
+  ADD CONSTRAINT `fr_subcategories_ibfk_1` FOREIGN KEY (`cat_id`) REFERENCES `FR_Categories` (`cat_id`);
+
+--
+-- Constraints for table `FR_Suppliers`
+--
+ALTER TABLE `FR_Suppliers`
+  ADD CONSTRAINT `fr_suppliers_ibfk_1` FOREIGN KEY (`cou_id`) REFERENCES `FR_Countries` (`cou_id`);
